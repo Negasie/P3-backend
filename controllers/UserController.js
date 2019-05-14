@@ -33,10 +33,9 @@ router.post('/login', async (req, res) => {
 router.post("/", async (req, res)=>{
     try{
         console.log(req.body)
-        const hashedPassword = bcrypt.hashSync(req.body.password, 10);
-        req.body.password = hashedPassword;
+        const passwordHash = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10));
+        req.body.password = passwordHash;
         const newUser = await User.create(req.body)
-        newUser.password = null;
         req.session.userId = newUser._id;
         res.json({
             status: 200,
@@ -50,5 +49,7 @@ router.post("/", async (req, res)=>{
         })
     }
 })
+
+
 
 module.exports = router;
