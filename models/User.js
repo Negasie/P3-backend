@@ -7,10 +7,8 @@ const userSchema = new mongoose.Schema({
         unique: true
     },
     password: String,
-    betsBooked: [],
-    betsPlaced: [],
-    betsWon: [],
-    betsLost: []
+    betsCreated: [{type: mongoose.Schema.Types.ObjectId, ref: "Bet"}]
+
 })
 
 const User = mongoose.model('User', userSchema);

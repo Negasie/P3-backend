@@ -32,7 +32,11 @@ app.use((req, res, next)=>{
 })
 
 const userController = require('./controllers/UserController');
+const betController = require('./controllers/Betcontroller');
+
+
 app.use('/users', userController);
+app.use('/bets', betController);
 
 app.listen(process.env.PORT || 9000, ()=>{
     console.log("ITS ALIIIIVE")
