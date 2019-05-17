@@ -13,8 +13,10 @@ class BetContainer extends Component {
 				_id: null,
 				game: '',
 				action: '',
-				odds: ''
+				odds: '',
+			accepted: false
 			},
+
 
 		}
 	}
@@ -109,7 +111,13 @@ closeAndEdit = async (e) =>{
   }
 
 
+acceptBet = (bet) => {
+	console.log(bet, '<--- accepted')
+	this.setState({
+		accepted: true
 
+	})
+}
 
 
 

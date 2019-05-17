@@ -9,7 +9,8 @@ class CreateBet extends Component {
     this.state = {
       game: '',
       action: '',
-      odds: ''
+      odds: '',
+      accepted: false
     }
   }
   updateBet = (e) => {
@@ -26,11 +27,7 @@ class CreateBet extends Component {
         <label>
           Game:
           <Dropdown  name="game" updateBet={this.updateBet}/>
-        </label><br></br>
-        <label>
-          Action:
-          <input type="text" name="action" onChange={this.updateBet}/>
-        </label><br></br>
+        </label>
          <label>
           Odds:
           <input type="text" name="odds" onChange={this.updateBet}/>
