@@ -1,6 +1,5 @@
 const router = require('express').Router();
 const Bet = require('../models/Bets');
-const User = require('../models/User');
 
 router.get("/", async (req, res)=>{
     try{
@@ -23,7 +22,7 @@ router.post("/", async (req, res) => {
 	    console.log(req.body);
 	    const newBet = await Bet.create(req.body);
 	    console.log(newBet);
-	    // const user = await User.findById(req.session.userId);
+	    // const user = await User.findById(req.session.username);
 	    // user.betsCreated.push(newBet._id);
 	    // await user.save()
 	    res.json({
