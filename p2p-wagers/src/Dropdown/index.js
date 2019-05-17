@@ -29,12 +29,6 @@ class DropDown extends React.Component {
                      return <option value={obj.strEvent}>{obj.strEvent}</option>
                  })
               }</select>
-              <select name="action" onChange={this.props.updateBet}>{
-                this.state.values.map((obj) => {
-                  return <option value={obj.strHomeTeam}>{obj.strHomeTeam}</option>
-
-                })
-              }</select>
             </div>;
     }
 }
