@@ -39,6 +39,12 @@ const betController = require('./controllers/Betcontroller');
 app.use('/users', userController);
 app.use('/bets', betController);
 
+
+app.get('*', (req,res) =>{
+    res.sendFile(path.join(__dirname+'/P3-frontend/build/index.html'));
+});
+
+
 app.listen(process.env.PORT || 9000, ()=>{
     console.log("ITS ALIIIIVE")
 })
